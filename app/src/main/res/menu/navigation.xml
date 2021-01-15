@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+        <item
+            android:id="@+id/petListFragment"
+            android:icon="@drawable/list_icon"
+            android:title="List"/>
+
+        <item
+            android:id="@+id/addPetFragment"
+            android:icon="@drawable/plus_icon"
+            android:title="New"/>
+
+        <item
+            android:id="@+id/mapFragment"
+            android:icon="@drawable/marker_icon"
+            android:title="Map"/>
+
+
+</menu>

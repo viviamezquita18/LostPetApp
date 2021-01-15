@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="pet"
+            type="com.app.lostpetapp.model.Pet" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <fragment
+            android:id="@+id/mapFragment"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.5"
+            android:background="@drawable/background_map"
+            android:elevation="6dp"
+            android:tag="fragment_sheet_home" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/new_pet_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:elevation="10dp"
+                    app:cardCornerRadius="75dp">
+
+                    <ImageView
+                        android:id="@+id/click_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dog" />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageButton
+                    android:id="@+id/camera_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom|right"
+                    android:background="@drawable/circle"
+                    android:elevation="2dp"
+                    android:src="@drawable/camera"
+                    android:textColor="#fff" />
+
+            </FrameLayout>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/et_style"
+                android:hint="Comentarios"
+                android:padding="10dp"
+                android:text="@={pet.description}"
+                app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/frameLayout"
+                app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+            <Button
+                android:id="@+id/new_pet_button"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/my_background_round_corners"
+                android:backgroundTint="@color/primaryLightColor"
+                android:text="Report Pet"
+                android:textColor="@color/colorWhite"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

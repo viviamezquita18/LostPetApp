@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pet"
+            type="com.app.lostpetapp.model.Pet" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true"
+            app:elevation="@dimen/margin_m">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_m"
+                android:layout_marginBottom="@dimen/margin_m"
+                android:orientation="vertical"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/pet_image"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="4"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dog"
+                    app:imageUrl="@{pet.photo}" />
+
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:layout_marginBottom="@dimen/margin_xs"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/calendar"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_vertical"
+                    android:text="@{pet._date}"
+                    android:textSize="@dimen/font_m"
+                    tool:text="05-05-20" />
+
+                <TextView
+                    android:id="@+id/location_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:layout_marginBottom="@dimen/margin_xs"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/map_marker"
+
+                    android:drawablePadding="2dp"
+                    android:text="@{pet.city}"
+                    android:textSize="@dimen/font_m"
+                    tool:text="Tunja-Boyaca" />
+
+                <TextView
+                    android:id="@+id/found_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:layout_marginBottom="@dimen/margin_xs"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/map_marker"
+                    android:drawablePadding="2dp"
+                    android:text="Fecha"
+                    android:textSize="@dimen/font_m"
+                    android:visibility="gone"
+                    tool:text="Found" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

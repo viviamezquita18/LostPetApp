@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/addPetFragment">
+
+    <fragment
+        android:id="@+id/addPetFragment"
+        android:name="com.app.lostpetapp.ui.AddPetFragment"
+        android:label="fragment_add_pet"
+        tools:layout="@layout/fragment_add_pet" />
+    <fragment
+        android:id="@+id/petListFragment"
+        android:name="com.app.lostpetapp.ui.PetListFragment"
+        android:label="fragment_pet_list"
+        tools:layout="@layout/fragment_pet_list" >
+        <action
+            android:id="@+id/action_petListFragment_to_detailPetFragment"
+            app:destination="@id/detailPetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.app.lostpetapp.ui.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/detailPetFragment"
+        android:name="com.app.lostpetapp.ui.DetailPetFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="pet"
+            app:argType="com.app.lostpetapp.model.Pet" />
+        <argument
+            android:name="transition"
+            app:argType="string" />
+    </fragment>
+</navigation>
