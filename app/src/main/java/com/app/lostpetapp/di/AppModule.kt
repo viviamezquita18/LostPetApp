@@ -23,10 +23,8 @@ object AppModule{
         return GsonBuilder().setLenient().create()
     }
 
-
     @Singleton
     @Provides
-
     fun provideRetrofit(gson: Gson):Retrofit{
         return Retrofit.Builder().addConverterFactory(GsonConverterFactory.create(gson)).baseUrl(
             BASE_URL).build()

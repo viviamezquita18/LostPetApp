@@ -1,5 +1,6 @@
 package com.app.lostpetapp.util
 
+import android.R
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
@@ -31,7 +32,8 @@ class MarkerClusterRenderer(
     private lateinit var icon: Bitmap
 
     init {
-        imageView.layoutParams = ViewGroup.LayoutParams(100, 100)
+        imageView.layoutParams = ViewGroup.LayoutParams(120, 80)
+        imageView.setPadding(2, 0, 2, 0)
         iconGenerator.setContentView(imageView)
     }
 

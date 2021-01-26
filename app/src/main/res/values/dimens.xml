@@ -27,6 +27,7 @@
     <dimen name="card_size_xl">220dp</dimen>
 
     <dimen name="padding_button">16dp</dimen>
+    <dimen name="padding_marker">2dp</dimen>
 
 
 
